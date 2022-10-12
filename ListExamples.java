@@ -44,6 +44,13 @@ class ListExamples {
     }
     return result;
   }
+}
 
 
+class ContainsA implements StringChecker {
+  @Override
+  public boolean checkString(String s){
+    if(s.contains("a") || s.contains("A")){ return true;}
+    return false;
+  }
 }

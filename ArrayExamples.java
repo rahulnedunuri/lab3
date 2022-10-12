@@ -7,6 +7,9 @@ public class ArrayExamples {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
+    // 0 1 2 3 4
+    // 4 3 2 3 4 BUG is that no temp variable for indexes that have been reversed
+
   }
 
   // Returns a *new* array with all the elements of the input array in reversed
@@ -16,7 +19,7 @@ public class ArrayExamples {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = newArray[arr.length - i - 1];
     }
-    return arr;
+    return arr; //BUG not returning the new array
   }
 
   // Averages the numbers in the array (takes the mean), but leaves out the
@@ -27,12 +30,12 @@ public class ArrayExamples {
     double lowest = arr[0];
     for(double num: arr) {
       if(num < lowest) { lowest = num; }
-    }
+    }//lowest = lowest in array
     double sum = 0;
     for(double num: arr) {
       if(num != lowest) { sum += num; }
     }
-    return sum / (arr.length - 1);
+    return sum / (arr.length - 1); //BUG possibly doing integer division??
   }
 
 
